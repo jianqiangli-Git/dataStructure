@@ -1,5 +1,11 @@
 package resource.tree;
 
+/**
+ * 线程的测试，体现了使用Runnable的好处
+ * 就是更方便操作共享数据
+ * @author Administrator
+ *
+ */
 public class ThreadTest{
 	public static void main(String[] args) {
 //		new ThreadTest1().start();
