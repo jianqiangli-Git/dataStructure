@@ -1,5 +1,5 @@
 # dataStructure
-## data structure and algorithm for leetcode and nowcoder
+### data structure and algorithm for leetcode and nowcoder
 
 - resource
 
