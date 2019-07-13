@@ -1,7 +1,7 @@
 package resource.list;
 
 /**
- * 链表的节点类
+ * 定义链表的节点类
  * @author Administrator
  *
  */
