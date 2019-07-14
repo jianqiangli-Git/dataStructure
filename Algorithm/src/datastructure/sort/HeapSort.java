@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class HeapSort {
 
 	/**堆排序的实现(大顶堆)
+	 * 时间复杂度：最好 O(nlogn), 最坏 O(nlogn), 平均 O(nlogn)
+	 * 空间复杂度：O(1)
+	 * 不稳定
 	 * @param args
 	 */
 	public static void main(String[] args) {
