@@ -7,12 +7,10 @@ package resource.tree;
  */
 public class TreeNode {
 	public int data;
-	public TreeNode lchild;
-	public TreeNode rchild;
+	public TreeNode lchild = null;
+	public TreeNode rchild = null;
 	
 	public TreeNode(int data){
-		this.lchild = null;
-		this.rchild = null;
 		this.data = data;
 	}
 }
