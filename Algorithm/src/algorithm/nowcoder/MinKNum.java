@@ -14,6 +14,34 @@ public class MinKNum {
 		Solution20 s = new Solution20();
 		ArrayList<Integer> listK = s.GetLeastNumbers_Solution(arr, 10);
 		System.out.println(listK.toString());
+		
+		MinKNum mkn = new MinKNum();
+		ArrayList<Integer> minK = mkn.GetLeastNumbers_Solution(arr, 4);
+		
+		System.out.println("第二种："+minK.toString());
+	}
+	
+	//借用冒泡排序的方法，排出最小的k个数到数组最右边
+	public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+//		int m = 1;
+		for(int i=input.length-1;i>input.length-k-1;i--){			
+//			System.out.println("第"+m+"次");			
+			for(int j=0;j<i;j++){				
+				if(input[j]<input[j+1]){
+					int temp = input[j];
+					input[j] = input[j+1];
+					input[j+1] = temp;
+				}
+			}
+//			m++;
+		}
+		//得到最后四位最小的数组
+		System.out.println(Arrays.toString(input));
+		for(int i=input.length-1;i>input.length-k-1;i--){
+			list.add(input[i]);   //倒序存到 list 中最后四位就是升序的
+		}
+		return list;
 	}
 
 }
