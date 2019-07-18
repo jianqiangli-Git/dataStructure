@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import resource.tree.TreeNode;
-import resource.tree.BinaryTree;
+import resource.tree.CompleteBinaryTree;
 
 public class BinaryTreeDepth {
 
@@ -14,8 +14,8 @@ public class BinaryTreeDepth {
 	 */
 	public static void main(String[] args) {
 		int[] arr = {1,2,3,4,5,6,7,8,9};
-		BinaryTree bt = new BinaryTree();
-		TreeNode root = bt.createBinaryTree(arr);
+		CompleteBinaryTree bt = new CompleteBinaryTree();
+		TreeNode root = bt.createCompleteBinaryTree(arr);
 		System.out.print("层次遍历：");
 		bt.levelOrder(root);
 		System.out.println();
@@ -34,7 +34,7 @@ public class BinaryTreeDepth {
 //        }
 //        int nLeft = TreeDepth(root.lchild);
 //        int nRight = TreeDepth(root.rchild);
-//        return nLeft>nRight ? (nLeft+1):(nRight+1);  // nLeft>nRight ? nLeft+:nRight 将会返回 0
+//        return nLeft>nRight ? (nLeft+1):(nRight+1);  // nLeft > nRight ? nLeft : nRight 将会返回 0
 //    }
 //}
 //非递归法(利用队列实现)
@@ -57,7 +57,7 @@ class Solution15 {
 			  }
 			  
 			  if(count == nextCount){    //如果出队个数达到上一层元素的个数
-				  nextCount = q.size();  //重新记录当前层的个数
+				  nextCount = q.size();  //重新记录当前层的个数,上一层的结点都出队了，其下一层的孩子节点也正好都入队
 				  count = 0;             //出队个数更新为0
 				  depth++;               //深度加 1
 			  }

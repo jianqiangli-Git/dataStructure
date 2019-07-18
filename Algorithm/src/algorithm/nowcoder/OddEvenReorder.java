@@ -29,7 +29,7 @@ class Solution11 {
     	while(true){
     		flag = true;
 	    	for(int i=array.length-1;i>0;i--){
-	    		if(array[i]%2!=0&&array[i-1]%2==0){ //如果奇数前面有个偶数就换
+	    		if(array[i]%2!=0 && array[i-1]%2==0){ //如果奇数前面有个偶数就换
 	    			temp = array[i];
 	    			array[i] = array[i-1];
 	    			array[i-1] = temp;
