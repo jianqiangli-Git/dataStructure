@@ -1,6 +1,6 @@
 package algorithm.nowcoder;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 public class MyArrayList {
 
 	/**输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。

@@ -2,7 +2,6 @@ package algorithm.nowcoder;
 
 import resource.list.LinkedList;
 import resource.list.ListNode;
-import java.util.Stack;
 
 public class LinkedListLastKElements {
 

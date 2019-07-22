@@ -32,12 +32,12 @@ class Solution18 {
     	q.add(root);
     	while(!q.isEmpty()){
     		TreeNode node = q.poll();
-    		arrList.add(node.data);
-    		if(node.lchild!=null){
-    			q.add(node.lchild);
+    		arrList.add(node.val);
+    		if(node.left!=null){
+    			q.add(node.left);
     		}
-    		if(node.rchild!=null){
-    			q.add(node.rchild);
+    		if(node.right!=null){
+    			q.add(node.right);
     		}
     	}
         return arrList;

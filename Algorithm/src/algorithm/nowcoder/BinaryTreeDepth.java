@@ -49,11 +49,11 @@ class Solution15 {
 		  while(!q.isEmpty()){
 			  TreeNode node = q.poll();  //出队
 			  count++;                   //记录出队个数
-			  if(node.lchild!=null){
-				  q.offer(node.lchild);  //如果当前节点有左右孩子，将左右孩子入队
+			  if(node.left!=null){
+				  q.offer(node.left);  //如果当前节点有左右孩子，将左右孩子入队
 			  }
-			  if(node.rchild!=null){
-				  q.offer(node.rchild);
+			  if(node.right!=null){
+				  q.offer(node.right);
 			  }
 			  
 			  if(count == nextCount){    //如果出队个数达到上一层元素的个数

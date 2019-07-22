@@ -43,6 +43,10 @@ public class MaxSum {
  * 最终res的值为8
  *
  */
+
+//当进来一个新的数字 arr[i+1] 时，判断到他前面数字子序列和 a[i]+arr[i+1] 跟 arr[i+1] 哪个大，
+//前者大就保留前者，后者大就说明前面连续数字加起来都不如后者一个新进来的数字大，前面数字就可以舍弃，
+//从 arr[i+1] 开始，每次比较完都跟 max 比较一下，最后的 max 就是最大值。
 class Solution21 {
     public int FindGreatestSumOfSubArray(int[] array) {
     	int res = array[0]; //记录当前所有子数组的和的最大值

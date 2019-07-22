@@ -16,7 +16,7 @@ public class MinKNum {
 		System.out.println(listK.toString());
 		
 		MinKNum mkn = new MinKNum();
-		ArrayList<Integer> minK = mkn.GetLeastNumbers_Solution(arr, 4);
+		ArrayList<Integer> minK = mkn.GetLeastNumbers_Solution(arr, 5);
 		
 		System.out.println("µÚ¶şÖÖ£º"+minK.toString());
 	}

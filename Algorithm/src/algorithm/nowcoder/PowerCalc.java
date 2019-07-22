@@ -1,6 +1,5 @@
 package algorithm.nowcoder;
 
-import java.io.EOFException;
 
 public class PowerCalc {
 

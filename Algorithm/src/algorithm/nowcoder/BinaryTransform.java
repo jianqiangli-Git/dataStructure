@@ -1,5 +1,5 @@
 package algorithm.nowcoder;
-import java.lang.*;
+
 public class BinaryTransform {
 
 	/**

@@ -57,11 +57,11 @@ class Solution16 {
     	if(root==null){
     		return 0;   //如果是空树，返回 0 表示是平衡二叉树
     	}
-    	int nleft = getDepth(root.lchild);   //得到左子树的高度
+    	int nleft = getDepth(root.left);   //得到左子树的高度
     	if(nleft == -1){                     //检查左子树是否是平衡二叉树，如果不是则直接返回 -1
     		return -1;
     	}
-    	int nright = getDepth(root.rchild);   //得到右子树的高度
+    	int nright = getDepth(root.right);   //得到右子树的高度
     	if(nright == -1){
     		return -1;
     	}
