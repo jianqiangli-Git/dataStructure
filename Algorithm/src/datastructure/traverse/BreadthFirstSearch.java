@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import resource.tree.TreeNode;
-import resource.tree.BinaryTree;
+import resource.tree.CompleteBinaryTree;
 public class BreadthFirstSearch {
 
 	/**广度优先遍历的实现(利用队列)
@@ -13,8 +13,8 @@ public class BreadthFirstSearch {
 	 */
 	public static void main(String[] args) {
 		int[] array = {1,2,3,4,5,6};
-		BinaryTree bt = new BinaryTree();
-		TreeNode root = bt.createBinaryTree(array);
+		CompleteBinaryTree bt = new CompleteBinaryTree();
+		TreeNode root = bt.createCompleteBinaryTree(array);
 		BreadthFirstSearch bfs = new BreadthFirstSearch();
 		bfs.BFS(root);
 	}
@@ -24,12 +24,12 @@ public class BreadthFirstSearch {
 		q.add(root);
 		while(!q.isEmpty()){
 			TreeNode node = q.poll();
-			System.out.print(node.data+" ");
-			if(node.lchild!=null){
-				q.add(node.lchild);
+			System.out.print(node.val+" ");
+			if(node.left!=null){
+				q.add(node.left);
 			}
-			if(node.rchild!=null){
-				q.add(node.rchild);
+			if(node.right!=null){
+				q.add(node.right);
 			}
 		}
 	}

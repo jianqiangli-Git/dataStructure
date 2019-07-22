@@ -13,11 +13,11 @@ public class ParticleSearch {
 
 	}
 	
-	public boolean search(int[] arr,int left,int right,int target){   //传入查找的范围(left~right)\
+	public boolean search(int[] arr,int left,int right,int target){   //传入查找的范围(left~right)
 		int i = left;
 		int j = right;                   //i,j 分别为查找范围的起始位置和结束位置
-		while(i<=j){                      
-			int mid = (i+j)/2;
+		while(i<=j){                     //如果i<=j就一直查找，i==j时，i==mid==j就判断arr[mid]==target,--
+			int mid = (i+j)/2;           //--下一次不管i=mid+1还是j=mid-1都不会使i<=j成立
 			if(arr[mid]==target){        //如果中间值等于目标值，就直接返回
 				return true;
 			}

@@ -21,22 +21,22 @@ public class BinarySearchTree {
 			else{   //从根节点开始比较，如果要插入的节点比根节点小，则插入到根节点的左边
 				TreeNode temp = root;
 				while(temp != null){
-					if(node.data < temp.data){    //首先判断节点跟根节点的大小关系
-						if(temp.lchild == null){
-							temp.lchild = node;   //如果节点小于当前根节点又根节点左孩子为空，就插到当前节点的左孩子
+					if(node.val < temp.val){    //首先判断节点跟根节点的大小关系
+						if(temp.left == null){
+							temp.left = node;   //如果节点小于当前根节点又根节点左孩子为空，就插到当前节点的左孩子
 							break;                //插完就结束，继续插入下一个新节点 node
 						}
 						else{
-							temp = temp.lchild;   //如果小于当前根节点又根节点左孩子不为空，肯定要插到根节点左边，就先去左孩子
+							temp = temp.left;   //如果小于当前根节点又根节点左孩子不为空，肯定要插到根节点左边，就先去左孩子
 						}                         //不断更新根节点
 					}
 					else{
-						if(temp.rchild == null){
-							temp.rchild = node;
+						if(temp.right == null){
+							temp.right = node;
 							break;
 						}
 						else{
-							temp = temp.rchild;
+							temp = temp.right;
 						}
 					}				
 				}
@@ -49,9 +49,9 @@ public class BinarySearchTree {
 		if(root == null){
 			return ;
 		}
-		System.out.print(root.data+" ");
-		preOrder(root.lchild);
-		preOrder(root.rchild);
+		System.out.print(root.val+" ");
+		preOrder(root.left);
+		preOrder(root.right);
 	}
 	
 	//中序遍历
@@ -60,9 +60,9 @@ public class BinarySearchTree {
 			return ;
 		}
 		
-		inOrder(root.lchild);
-		System.out.print(root.data+" ");
-		inOrder(root.rchild);
+		inOrder(root.left);
+		System.out.print(root.val+" ");
+		inOrder(root.right);
 	}
 
 }

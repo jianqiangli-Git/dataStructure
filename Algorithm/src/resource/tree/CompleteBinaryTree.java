@@ -16,7 +16,7 @@ public class CompleteBinaryTree {
 		int[] datas = {1,2,3,4,5,6,7};	
 		CompleteBinaryTree bt = new CompleteBinaryTree();
 		TreeNode root = bt.createCompleteBinaryTree(datas);
-		System.out.println("root: "+root.data);
+		System.out.println("root: "+root.val);
 		System.out.println("先序遍历：");
 		bt.preOrder(root);
 		System.out.println();
@@ -36,14 +36,14 @@ public class CompleteBinaryTree {
 		for(int i=0;i<datas.length;i++){        //把节点都存入 List 中,有利于直接根据下表索引得到相应的元素，从而可以根据下标关系建立CBT
 			list.add(new TreeNode(datas[i]));
 		}
-		for(int i=0;i<list.size()/2-1;i++){         //父节点的范围是 0~length/2-1
-			list.get(i).lchild = list.get(2*i+1);   //左孩子是 2*i+1
-			list.get(i).rchild = list.get(2*i+2);   //左孩子是 2*i+2
+		for(int i=0;i<list.size()/2-1;i++){         //父节点的-范围是 0~length/2-1
+			list.get(i).left = list.get(2*i+1);   //左孩子是 2*i+1
+			list.get(i).right = list.get(2*i+2);   //左孩子是 2*i+2
 		}
 		int lastParentNode = list.size()/2-1;       //对最后一个父节点，他一定有左孩子，如果节点数是奇数，才有右孩子
-		list.get(lastParentNode).lchild = list.get(2*lastParentNode+1);
+		list.get(lastParentNode).left = list.get(2*lastParentNode+1);
 		if(list.size()%2!=0){
-			list.get(lastParentNode).rchild = list.get(2*lastParentNode+2);
+			list.get(lastParentNode).right = list.get(2*lastParentNode+2);
 		}
 		return list.get(0);
 	}
@@ -54,9 +54,9 @@ public class CompleteBinaryTree {
 			return ;
 		}
 		else{
-			System.out.print(root.data+" ");
-			preOrder(root.lchild);
-			preOrder(root.rchild);
+			System.out.print(root.val+" ");
+			preOrder(root.left);
+			preOrder(root.right);
 		}
 	}
 	
@@ -66,9 +66,9 @@ public class CompleteBinaryTree {
 			return ;
 		}
 		else{
-			inOrder(root.lchild);
-			System.out.print(root.data+" ");
-			inOrder(root.rchild);
+			inOrder(root.left);
+			System.out.print(root.val+" ");
+			inOrder(root.right);
 		}
 	}
 	
@@ -78,9 +78,9 @@ public class CompleteBinaryTree {
 			return ;
 		}
 		else{
-			postOrder(root.lchild);
-			postOrder(root.rchild);
-			System.out.print(root.data+" ");
+			postOrder(root.left);
+			postOrder(root.right);
+			System.out.print(root.val+" ");
 			
 		}
 	}
@@ -95,12 +95,12 @@ public class CompleteBinaryTree {
 		q.add(root);
 		while(!q.isEmpty()){      //如果队列非空
 			TreeNode node = q.poll(); //队头出队
-			System.out.print(node.data+" ");
-			if(node.lchild!=null){
-				q.offer(node.lchild);  //有左孩子就将左孩子入队
+			System.out.print(node.val+" ");
+			if(node.left!=null){
+				q.offer(node.left);  //有左孩子就将左孩子入队
 			}
-			if(node.rchild!=null){ 
-				q.offer(node.rchild);  //有右孩子就将右孩子入队
+			if(node.right!=null){ 
+				q.offer(node.right);  //有右孩子就将右孩子入队
 			}
 		}
 	}

@@ -3,7 +3,7 @@ package datastructure.traverse;
 import java.util.Stack;
 
 import resource.tree.TreeNode;
-import resource.tree.BinaryTree;
+import resource.tree.CompleteBinaryTree;
 public class DepthFirstSearch {
 
 	/**深度优先遍历的实现(利用栈实现)
@@ -12,8 +12,8 @@ public class DepthFirstSearch {
 	 */
 	public static void main(String[] args) {
 		int[] array = {1,2,3,4,5,6,7,8,9};
-		BinaryTree bt = new BinaryTree();
-		TreeNode root = bt.createBinaryTree(array);
+		CompleteBinaryTree bt = new CompleteBinaryTree();
+		TreeNode root = bt.createCompleteBinaryTree(array);
 		//把树转换为邻接矩阵
 		int[][] adj = {{0,1,1,0,0,0},    //adj.length 是行数
 					   {1,0,0,1,1,0},    //adj[i].length 是第i行的元素数(列数)
@@ -42,15 +42,13 @@ public class DepthFirstSearch {
 		s.add(root);
 		while(!s.isEmpty()){
 			TreeNode n = s.pop();
-			System.out.print(n.data+" ");
-			if(n.rchild!=null){   //右孩子先入栈后出栈，就会先访问左孩子
-				s.add(n.rchild);
+			System.out.print(n.val+" ");
+			if(n.right!=null){   //右孩子先入栈后出栈，就会先访问左孩子
+				s.add(n.right);
 			}
-			if(n.lchild!=null){
-				s.add(n.lchild);
-			}
-			
-			
+			if(n.left!=null){
+				s.add(n.left);
+			}			
 		}
 	}
 

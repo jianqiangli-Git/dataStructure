@@ -6,12 +6,12 @@ package resource.tree;
  *
  */
 public class TreeNode {
-	public int data;
-	public TreeNode lchild = null;
-	public TreeNode rchild = null;
+	public int val;
+	public TreeNode left = null;
+	public TreeNode right = null;
 	
 	public TreeNode(int data){
-		this.data = data;
+		this.val = data;
 	}
 }
 

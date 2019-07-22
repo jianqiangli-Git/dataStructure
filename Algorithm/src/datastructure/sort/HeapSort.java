@@ -29,7 +29,6 @@ public class HeapSort {
 	
 	//根据传递的父节点建立大顶堆
 	public void heapSort(int[] array,int start,int end){   //传递数组,父节点下标以及结束的下标
-		int arrLength = array.length;
 		while(true){
 			int lchild = 2*start+1;  //当前父节点的左子节点的下标
 			if(lchild>end){
@@ -54,9 +53,8 @@ public class HeapSort {
 			System.out.println("调整："+Arrays.toString(array)); //输出每次排序过后的堆序列
 		}
 		System.out.println("排序好的大顶堆："+Arrays.toString(array));
-		for(int j=array.length-1;j>0;j--){		
-			//将建好的堆第一个和最后一个元素交换
-			swap(array,0,j);
+		for(int j=array.length-1;j>0;j--){					
+			swap(array,0,j);         //将建好的堆第一个和最后一个元素交换
 			System.out.println("swapArray:"+Arrays.toString(array));
 			heapSort(array, 0, j-1); //调整堆时从上往下，堆的调整区间每次-1，第一次调整堆由于最大的数已经在最后一个位置
 									 //因此第一次调整的结束下标应该为j-1
